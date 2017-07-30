@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <form action="\newpost", method="POST">
+        <label for="post-title">Title For Your New Blog:</label>
+        <br />
+        <input type="text" name="blog_title" id="blog-title" />
+        <p style="color:red; display:inline-block;"><i>{{title_error}}</i></p>
+        <br />
+        <br />
+        <label for="post-body">Your New Blog:</label>
+        <br />
+        <textarea rows="10" cols="50" name="blog_body" id="blog-body"></textarea>
+        <p style="color:red; display:inline-block;"><i>{{body_error}}</i></p>
+        <br />
+        <br />
+        <input type="submit" value="Add Blog" />
+    </form>
+
+{% endblock %}

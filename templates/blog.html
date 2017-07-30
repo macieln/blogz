@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <p>{{blog_body}}</p>
+
+    {% if bloger_blogs|length == 0 %}
+
+    {% else %}
+
+            {% for blog in bloger_blogs %}
+
+                    <h2><a href='/blog?id={{blog.id}}'>{{blog.title.title()}}</a></h2>
+                    <p style="text-decoration:none;">{{blog.body}}</p>
+                    <hr />
+
+            {% endfor %}
+
+    {% endif %}
+
+    {% if all_blogs|length == 0 %}
+
+    {% else %}
+
+            {% for blog in all_blogs %}
+
+                    <h2><a href='/blog?id={{blog.id}}'>{{blog.title.title()}}</a></h2>
+                    <p style="text-decoration:none;">{{blog.body}}</p>
+                    <hr />
+
+            {% endfor %}
+
+    {% endif %}
+
+{% endblock %}

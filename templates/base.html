@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>{{title}}</title>
+            <style>
+              .error {
+                  color: red;
+              }
+              .success {
+                  color: green;
+              }
+            </style>
+        </head>
+        <body>
+            {% with messages = get_flashed_messages(with_categories=True) %}
+              <ul>
+              {% for category, message in messages %}
+                  <li class="{{category}}">{{message}}</li>
+              {% endfor %}
+              </ul>
+            {% endwith %}
+            <header>
+              <ul style="list-style-type:none;">
+                <li><a href="/" style="display:inline-block;">Home</a></li>
+                <li><a href="/blog" style="display:inline-block;">Blogs</a></li>
+                <li><a href="/newpost" style="display:inline-block;">Add Blog</a></li>
+                <li><a href="/logout" style="display:inline-block;">Logout</a></li>
+                <li><a href="/login" style="display:inline-block;">Login</a></li>
+            </heade>
+            <h1 style="text-align:center;">{{title}}</h1>
+
+            {% block content %}
+            {% endblock %}
+
+        </body>
+    </html>

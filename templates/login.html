@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Log in to Blogz!</h1>
+<p>If you don't have an account, you can <a href="/signup">signup</a> for one.</p>
+<form action="/login" method="POST">
+    <table>
+        <tr>
+            <td><label for="email">Email</label></td>
+            <td><input name="email" type="email" value="{{ email }}"></td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td><input name="password" type="password"></td>
+        </tr>
+    </table>
+    <input type="submit" value="Login">
+</form>
+<form action="/login" method="GET">
+  <td><input name="signup" value="True" type="hidden"></td>
+  <input type="submit" value="Signup">
+</form>
+{% endblock %}
